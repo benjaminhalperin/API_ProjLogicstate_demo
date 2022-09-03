@@ -1,0 +1,346 @@
+[
+  {
+    "id": 0,
+    "productName": "01",
+    "exit": "Cancel MOTION_TEST from A/N => 10 ",
+    "mainmode": "TEST",
+    "submode": "Motion Test",
+    "description": "The FCR is in TEST mode. The FCR antenna is controlled by the setting introduction in the MOTION GENERATOR A/N working page and disconnected from the FCS logics."
+   },
+  {
+    "id": 1,
+    "productName": "02",
+    "exit": "Cancel REFERENCE_TARGET_TEST from A/N => 10 ",
+    "mainmode": "TEST",
+    "submode": "REFERENCE TGT TEST",
+    "description": "The FCR is in TEST mode. The FCR antenna is controlled by the setting introduction in the REFERENCE TARGET A/N working page and disconnected from the FCS logics."
+ },
+  {
+    "id": 2,
+    "productName": "10",
+    "exit": "AUTONOMOUS => 21--If not BUSY => “ExternalDesignationPriorities”--TBL_DES => 31 or 41 FCR_DesignationSource=TBL--“ExitFromSearchMode”--ANT IN MOTION TEST from A/N => FCR_LogicMode=01--REFERENCE TARGET TEST from A/N => FCR_LogicMode=02--GUN_TO_GEO => FCR_LogicMode=11",
+    "mainmode": "SEARCH",
+    "submode": "SURVEILLANCE",
+    "description": "SR picture is displayed on the FCC Main Tactical display. The display can be in true or relative coordinates.  TBL designation is enabled on the SR video."
+  },
+  {
+    "id": 3,
+    "productName": "11",
+    "exit": "If BRK_TRK  => 1",
+    "mainmode": "SEARCH",
+    "submode": "FCR TO GEO",
+    "description": "FCR antenna is directed to the position introduction of the GEO TARGET definition setting."
+  },
+  {
+    "id": 4,
+    "productName": "21",  
+    "exit": "90 => 22--30 => 23--SURVEILLANCE => “ExternalDesignationPriorities”--If not BUSY => “ExternalDesignationPriorities”--SELF_DES => 31 or 41 FCR_DesignationSource=TBL--“ExitFromSearchMode”",
+    "mainmode": "AUTONOMOUS SEARCH",
+    "submode": "SEARCH 360",  
+    "description": "FCR antenna rotates in constant speed.  Elevation introduction of 1.5deg one level can be super imposed around elevation position setting in operational page."
+    },
+	{
+    "id": 5,
+    "productName": "22",  
+    "exit": "360 => 21--30 => 23--SURVEILLANCE => “ExternalDesignationPriorities”--If not BUSY => “ExternalDesignationPriorities”--SELF_DES => 31 or 41 FCR_DesignationSource=TBL--“ExitFromSearchMode”",
+    "mainmode": "AUTONOMOUS SEARCH",
+    "submode": "SECTOR 90",  
+    "description": "FCR antenna performes sector scan of 90deg width around TBL azimuth position.--Elevation introduction of 1.5deg one level can be super imposed around elevation position setting in operational page."
+    },
+	{
+    "id": 6,
+    "productName": "23",  
+    "exit": "360 => 21--90 => 22--SURVEILLANCE => “ExternalDesignationPriorities”--If not BUSY => “ExternalDesignationPriorities”--SELF_DES => 31 or 41 FCR_DesignationSource=TBL--“ExitFromSearchMode”",
+    "mainmode": "AUTONOMOUS SEARCH",
+    "submode": "SEARCH 30",  
+    "description": "FCR antenna performes sector scan of 30deg width around TBL azimuth position.    Elevation introduction of 1.5deg three levels can be super imposed around elevation position setting in operational page."
+    },
+	{
+    "id": 7,
+    "productName": "31",  
+    "exit": "BRK_TRK => “ExternalDesignationPriorities”--MAN_ACQ => 41--FCR_AutoAcqTimeOut => 41--“ExitFromAutomaticAcquisitionMode”",
+    "mainmode": "AUTOMATIC ACQUISITION",
+    "submode": "TBL DES",  
+    "description": "FCR antenna azimuth follows TBL position + Azimuth Search Program (ASP) movements to scan the LOS area in AA policy, while in SUR policy the antenna follows TBL azimuth position.   In elevation, the antenna will move from Min to Max value to cover the SR source lobbing height in AA policy, while in SUR policy the elevation is stabilized on the horizon + corrections of +/-20mR.     Range coordinate is position controlled by the TBL."
+    },
+	{
+    "id": 8,
+    "productName": "32",  
+    "exit": "BRK_TRK => “ExternalDesignationPriorities”--MAN_ACQ => 42--FCR_AutoAcqTimeOut => 42--“ExitFromAutomaticAcquisitionMode”",
+    "mainmode": "AUTOMATIC ACQUISITION",
+    "submode": "SELF DES",  
+    "description": "FCR antenna azimuth follows TBL position + Azimuth Search Program (ASP) movements to scan the LOS area in AA policy, while in SUR policy the antenna follows TBL azimuth position.    In elevation, the antenna is positioned in last elevation value when FCS policy is AA, in SUR policy the elevation is stabilized on the horizon + corrections of +/-20mR.   Range coordinate is position controlled by the TBL."
+    },
+	{
+    "id": 9,
+    "productName": "33",  
+    "exit": "BRK_TRK => “ExternalDesignationPriorities”--MAN_ACQ => 43--FCR_AutoAcqTimeOut => 43--“ExitFromAutomaticAcquisitionMode”",
+    "mainmode": "AUTOMATIC ACQUISITION",
+    "submode": "INTERDESIGNATION",  
+    "description": "FCR antenna is slaved to the Source and target vector according to source."
+    },
+	{
+    "id": 10,
+    "productName": "34",  
+    "exit": "BRK_TRK => “ExternalDesignationPriorities”--MAN_ACQ => 44--FCR_AutoAcqTimeOut => 44--“ExitFromAutomaticAcquisitionMode”",
+    "mainmode": "AUTOMATIC ACQUISITION",
+    "submode": "EW DES",  
+    "description": "FCR antenna azimuth follows designation source position + Azimuth Search Program (ASP) movements to scan the LOS area in AA policy, while in SUR policy the antenna follows source azimuth position.     In elevation, the antenna will move from Min to Max value to cover the SR source lobbing height in AA policy, while in SUR policy the elevation is stabilized on the horizon + corrections of +/-20mR.    Range scan program is applied in the range coordinate."
+    },
+	{
+    "id": 11,
+    "productName": "35",  
+    "exit": "BRK_TRK => “ExternalDesignationPriorities”--MAN_ACQ => 45--FCR_AutoAcqTimeOut => 45--“ExitFromAutomaticAcquisitionMode”",
+    "mainmode": "AUTOMATIC ACQUISITION",
+    "submode": "CONVOC DES",  
+    "description": "FCR antenna azimuth is slaved to EOD position.   In elevation, the antenna is slaved to EOD elevation in AA policy, while in SUR policy the elevation is stabilized on the horizon + corrections of +/-20mR.   Range scan program is applied in the range coordinate."
+    },
+	{
+    "id": 12,
+    "productName": "36",  
+    "exit": "BRK_TRK => “ExternalDesignationPriorities”--MAN_ACQ => 46--FCR_AutoAcqTimeOut => 46--“ExitFromAutomaticAcquisitionMode”",
+    "mainmode": "AUTOMATIC ACQUISITION",
+    "submode": "INTERCONVOC DES",  
+    "description": "FCR antenna azimuth is slaved to the OTHER EOD or TDS position + Azimuth Search Program (ASP) movements to scan the LOS area in AA policy, while in SUR policy the antenna follows source azimuth position.     In elevation, the antenna is slaved to source position +/- 1.5 deg corrections by joystick in AA policy, while in SUR policy the elevation is stabilized on the horizon + corrections of +/-20mR.    Range scan program is applied in the range coordinate."
+    },
+	{
+    "id": 13,
+    "productName": "37",  
+    "exit": "BRK_TRK => “ExternalDesignationPriorities”--MAN_ACQ => 47--FCR_AutoAcqTimeOut => 47--“ExitFromAutomaticAcquisitionMode”",
+    "mainmode": "AUTOMATIC ACQUISITION",
+    "submode": "TWS DES 2D",  
+    "description": "FCR antenna azimuth is slaved to C&C TWS of 2D designation.   In elevation, the antenna will move from Min to Max value to cover the SR source lobbing height in AA policy, while in SUR policy the elevation is stabilized on the horizon + corrections of +/-20mR.    Range slaved to designation source."
+    },
+	{
+    "id": 14,
+    "productName": "38",  
+    "exit": "BRK_TRK => “ExternalDesignationPriorities”--MAN_ACQ => 48--FCR_AutoAcqTimeOut => 48--“ExitFromAutomaticAcquisitionMode”",
+    "mainmode": "AUTOMATIC ACQUISITION",
+    "submode": "TWS DES 3D",  
+    "description": "FCR antenna azimuth is slaved to C&C TWS of 3D designation.   In elevation, the antenna is slaved to source position +/- 2.5 deg corrections by joystick in AA policy, while in SUR policy the elevation is stabilized on the horizon + corrections of +/-20mR.    Range slaved to designation source."
+    },
+	{
+    "id": 15,
+    "productName": "41",  
+    "exit": "BRK_TRK => “ExternalDesignationPriorities”--“ExitFromManualAcquisitionMode”",
+    "mainmode": "MANUAL ACQUISITION",
+    "submode": "TBL DES",  
+    "description": "FCR antenna azimuth follows TBL or source position + B. Scan movements and joystick corrections +/-10deg to scan the LOS area in AA policy, while in SUR policy the antenna follows TBL or source azimuth position + corrections of +/-10deg by joystick.     In elevation, the antenna will move in velocity control by joystick in AA policy, while in SUR policy the elevation is stabilized on the horizon + corrections of +/-20mR.    Range coordinate is position controlled by the TBL + jostick corrections of +/-2000m."
+    },
+	{
+    "id": 16,
+    "productName": "42",  
+    "exit": "BRK_TRK => “ExternalDesignationPriorities”--“ExitFromManualAcquisitionMode”",
+    "mainmode": "MANUAL ACQUISITION",
+    "submode": "SELF DES",  
+    "description": "FCR antenna azimuth follows TBL position + B. Scan movements and joystick corrections +/-10deg to scan the LOS area in AA policy, while in SUR policy the antenna follows TBL azimuth position + corrections of +/-10deg by joystick.    In elevation, the antenna is positioned on the last designation elevation from which the elevation will move in velocity control by joystick in AA policy, while in SUR policy the elevation is stabilized on the horizon + corrections of +/-20mR.      Range coordinate is position controlled by the TBL + jostick corrections of +/-2000m."
+    },
+	{
+    "id": 17,
+    "productName": "43",  
+    "exit": "BRK_TRK => “ExternalDesignationPriorities”--“ExitFromManualAcquisitionMode”",
+    "mainmode": "MANUAL ACQUISITION",
+    "submode": "INTERDES",  
+    "description": "FCR antenna is slaved to the Source and target vector according to source.     Range corrections 0f +/-2000m can be superimposed on the source range."
+    },
+	{
+    "id": 18,
+    "productName": "44",  
+    "exit": "BRK_TRK => “ExternalDesignationPriorities”--“ExitFromManualAcquisitionMode”",
+    "mainmode": "MANUAL ACQUISITION",
+    "submode": "EW DES",  
+    "description": "FCR antenna azimuth follows source position + B. Scan movements and joystick corrections +/-10deg to scan the LOS area in AA policy, while in SUR policy the antenna follows source azimuth position + corrections of +/-10deg by joystick.    In elevation, the antenna is velocity controlled by joystick in AA policy, while in SUR policy the elevation is stabilized on the horizon + corrections of +/-20mR.     Range scan program is applied in the range coordinate."
+    },
+	{
+    "id": 19,
+    "productName": "45",  
+    "exit": "BRK_TRK => “ExternalDesignationPriorities”--“ExitFromManualAcquisitionMode”",
+    "mainmode": "MANUAL ACQUISITION",
+    "submode": "CONVOC DES",  
+    "description": "FCR antenna azimuth is slaved to EOD position.   In elevation, the antenna is slaved to EOD elevation in AA policy, while in SUR policy the elevation is stabilized on the horizon + corrections of +/-20mR.    Range scan program is applied in the range coordinate."
+    },
+	{
+    "id": 20,
+    "productName": "46",  
+    "exit": "BRK_TRK => “ExternalDesignationPriorities”--“ExitFromManualAcquisitionMode”",
+    "mainmode": "MANUAL ACQUISITIONN",
+    "submode": "INTERCONVOC DES",  
+    "description": "FCR antenna azimuth follows source position + B. Scan movements and joystick corrections +/-10deg to scan the LOS area in AA policy, while in SUR policy the antenna follows source azimuth position + corrections of +/-10deg by joystick.    In elevation, the antenna is velocity controlled by joystick in AA policy, while in SUR policy the elevation is stabilized on the horizon + corrections of +/-20mR.     Range scan program is applied in the range coordinate."
+    },
+	{
+    "id": 21,
+    "productName": "47",  
+    "exit": "BRK_TRK => “ExternalDesignationPriorities”--“ExitFromManualAcquisitionMode”",
+    "mainmode": "MANUAL ACQUISITION",
+    "submode": "TWS DES 2D",  
+    "description": "FCR antenna azimuth is slaved to C&C TWS of 2D designation + Azimuth Search Program (ASP) + joystick corrections +/-10deg in AA policy, while in SUR policy the antenna is slaved to the source + joystick corrections +/-10deg.     In elevation, the antenna is velocity controlled by the joystick in AA policy, while in SUR policy the elevation is stabilized on the horizon + corrections of +/-20mR.    Range slaved to designation source + joystick corrections"
+    },
+	{
+    "id": 22,
+    "productName": "48",  
+    "exit": "BRK_TRK => “ExternalDesignationPriorities”--“ExitFromManualAcquisitionMode”",
+    "mainmode": "MANUAL ACQUISITION",
+    "submode": "TWS DES 3D",  
+    "description": "FCR antenna azimuth is slaved to C&C TWS of 2D designation + Azimuth Search Program (ASP) + joystick corrections +/-10deg in AA policy, while in SUR policy the antenna is slaved to the source + joystick corrections +/-10deg.    In elevation, the antenna is velocity controlled by the joystick in AA policy, while in SUR policy the elevation is stabilized on the horizon + corrections of +/-20mR.    Range slaved to designation source + joystick corrections"
+    },
+	{
+    "id": 23,
+    "productName": "51",  
+    "exit": "BRK_TRK => “ExternalDesignationPriorities”--MAN_R => 53--MAN_AE => 56--MEM => 55--AE_TO_TV and TVT_IN_TRK => 52--If “CWFullTrack” => 57--If “CWTrackOnAngles” => 58",
+    "mainmode": "TRACKING",
+    "submode": "AUTO TRK",  
+    "description": "FCR locks on target - azimuth, elevation and range are controlled by AUTOMATIC TRACK loop.    CLOSED LOOP / OPEN LOOP is operative in SUR policy only."
+    },
+	{
+    "id": 24,
+    "productName": "52",  
+    "exit": "BRK_TRK => “ExternalDesignationPriorities”--MAN_R => 54--!(AE TO TV) => 51",
+    "mainmode": "TRACKING",
+    "submode": "TV TRK",  
+    "description": "FCR locks on target - azimuth, elevation are feed from the TVT errors control and range coordinate is controlled by the FCR AUTOMATIC TRACK loop."
+    },
+	{
+    "id": 25,
+    "productName": "53",  
+    "exit": "BRK_TRK => “ExternalDesignationPriorities”--TRK => 51",
+    "mainmode": "TRACKING",
+    "submode": "MAN R TRK",  
+    "description": "FCR locks on target in azimuth and elevation while range is manually controlled by joystick according to range gate position."
+    },
+	{
+    "id": 26,
+    "productName": "54",  
+    "exit": "BRK_TRK => “ExternalDesignationPriorities”--TRK => 52--!(AE TO TV) => 53",
+    "mainmode": "TRACKING",
+    "submode": "MAN R TV",  
+    "description": "FCR locks on target - azimuth, elevation are feed from the TVT errors control and range coordinate is controlled by the FCR MANUAL RANGE TRACK loop."
+    },
+	{
+    "id": 27,
+    "productName": "55",  
+    "exit": "BRK_TRK => “ExternalDesignationPriorities”--TRK => 51",
+    "mainmode": "TRACKING",
+    "submode": "MEM TRK",  
+    "description": "FCR locks on target - azimuth, elevation and range coordinates are in memory."
+    },
+	{
+    "id": 28,
+    "productName": "56",  
+    "exit": "BRK_TRK => “ExternalDesignationPriorities”--TRK => 51",
+    "mainmode": "TRACKING",
+    "submode": "MAN AE TRK",  
+    "description": "FCR locks on target in azimuth and elevation manually controlled by joystick in velocity, while range is automatically controlled by FCR TRK loop."
+    },
+	{
+    "id": 29,
+    "productName": "57",  
+    "exit": "BRK_TRK => “ExternalDesignationPriorities”--If “CWNotTrack” => “ExternalDesignationPriorities”--If “CWTrackOnAngles” => 59",
+    "mainmode": "TRACKING",
+    "submode": "CW TRK",  
+    "description": "Tracking on target by CW circuitry."
+    },
+	{
+    "id": 30,
+    "productName": "58",  
+    "exit": "BRK_TRK => “ExternalDesignationPriorities”--MAN_R => 59--If “CWNotTrack” => 51--If “CWFullTrack” => 57",
+    "mainmode": "TRACKING",
+    "submode": "CW MIX AUTO R",  
+    "description": "Tracking on target by CW circuitry in angles and range is automatic FCR range."
+    },
+	{
+    "id": 31,
+    "productName": "59",  
+    "exit": "BRK_TRK => “ExternalDesignationPriorities”--TRK => 58--If “CWNotTrack” => 53--If “CWFullTrack” => 57",
+    "mainmode": "TRACKING",
+    "submode": "CW MIX MNL R",  
+    "description": "Tracking on target by CW circuitry in angles and range is FCR manually controlled."
+    },
+	{
+    "id": 32,
+    "productName": "60",  
+    "exit": "GUN_TO_FCR from FCC and AA => 61--GUN_TO_FCR from C&C and AA => 61--GUN_TO_FCR from FCC and SUR => 62--GUN_TO_FCR from C&C and SUR => 62--GUN_TO_OFFSET and SUR and OFFSET_TGT from A/N => 63--GUN_TO_EOD from FCC and eod_in_track_mode=1 => 64--GUN_TO_EOD from C&C and eod_in_track_mode=1 => 64--GUN_TO_GEO and GEO_TGT from A/N => 65",
+    "mainmode": "ENGAGE GUN",
+    "submode": "GUN STBY",  
+    "description": "Gun in system initial operation, azimuth and elevation are positioned in zero."
+    },
+	{
+    "id": 33,
+    "productName": "61",  
+    "exit": "Not FCR_IN_TRK => 60--GUN_STBY => 60--SUR => 62",
+    "mainmode": "ENGAGE GUN",
+    "submode": "GUN TO FCR AA",  
+    "description": "Gun engaged to the target tracked by the FCR - Gun commands are calculated by the Gunnery computer."
+    },
+	{
+    "id": 34,
+    "productName": "62",  
+    "exit": "Not FCR_IN_TRK => 60--GUN_STBY => 60--AA => 61",
+    "mainmode": "ENGAGE GUN",
+    "submode": "GUN TO FCR SUR",  
+    "description": "Gun engaged to the target tracked by the FCR - Gun commands are calculated by the Gunnery computer."
+    },
+	{
+    "id": 35,
+    "productName": "63",  
+    "exit": "Not FCR_IN_TRK => 60--GUN_STBY => 60--AA => 60",
+    "mainmode": "ENGAGE GUN",
+    "submode": "GUN TO OFFSET",  
+    "description": "Gun engaged to the offset target tracked by the FCR - Gun commands are calculated by the Gunnery computer."
+    },
+	{
+    "id": 36,
+    "productName": "64",  
+    "exit": "If eod_in_track_mode !=1 => 60--GUN_STBY => 60",
+    "mainmode": "ENGAGE GUN",
+    "submode": "GUN TO EOD",  
+    "description": "Gun engaged to the target tracked by the EOD in azimuth and elevation, range coordinate origin is from source - Gun commands are calculated by the Gunnery computer."
+    },
+	{
+    "id": 37,
+    "productName": "65",  
+    "exit": "GUN_STBY => 60",
+    "mainmode": "ENGAGE GUN",
+    "submode": "GUN TO GEO",  
+    "description": "Gun engaged to the geographical target according to the setting of the relevant introduction.    Azimuth and elevation commands are calculated by the Gunnery computer if GEO target setting is valid."
+    },
+	{
+    "id": 38,
+    "productName": "70",  
+    "exit": "EOD_TO_FCR and FCR_IN_TRK => 71--EOD_TO_C&C and C&C_DES => 72--EOD_TO_ENG and GUN_LogicMode !=60 => 73--EOD_TO_TBL => 74",
+    "mainmode": "DES TO EOD",
+    "submode": "EOD FREE",  
+    "description": "EOD independent."
+    },
+	{
+    "id": 39,
+    "productName": "71",  
+    "exit": "Not FCR_IN_TRK => 70--breakTrackEOD => 70--EOD_FREE => 70",
+    "mainmode": "DES TO EOD",
+    "submode": "EOD TO FCR",  
+    "description": "EOD is slaved in azimuth to the other FCR while in elevation the EOD is velocity controlled or STAB."
+    },
+	{
+    "id": 40,
+    "productName": "72",  
+    "exit": "Not CaC_Des2EOD && breakTrackEOD => 70",
+    "mainmode": "DES TO EOD",
+    "submode": "EOD TO C&C",  
+    "description": "EOD is slaved in azimuth to C&C while in elevation the EOD is velocity controlled or STAB."
+    },
+	{
+    "id": 41,
+    "productName": "73",  
+    "exit": "If GUN_LogicMode=60 => 70--breakTrackEOD => 70--EOD_FREE => 70",
+    "mainmode": "DES TO EOD",
+    "submode": "EOD TO ENG",  
+    "description": "EOD is slaved in azimuth and elevation to the gun engaged coordinates."
+    },
+	{
+    "id": 42,
+    "productName": "74",  
+    "exit": "EOD_FREE => 70--breakTrackEOD => 70--EOD_FREE => 70",
+    "mainmode": "DES TO EOD",
+    "submode": "EOD TO TBL",  
+    "description": "EOD is slaved in azimuth to TBL position while in elevation the EOD is velocity controlled or STAB."
+    }
+]
